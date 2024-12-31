@@ -55,16 +55,16 @@ class BulletPool {
 
 
 public class ObjectPoolingTest {
-    public static void test(int iterations) {
+    public static void testMain(int iterations) {
         for (int i = 0; i < 10; i++) {  //warm-up the jvm
-            runTest(iterations, false);
+            test(iterations, false);
         }
 
         System.out.printf("\n--- Test with <%d> iterations --- \n", iterations);
-        runTest(iterations, true);
+        test(iterations, true);
     }
 
-    private static void runTest(int iterations, boolean out) {
+    private static void test(int iterations, boolean out) {
         if(out) System.out.printf("Iterations: %d\n", iterations);
 
         BulletPool pool = new BulletPool(1000);
